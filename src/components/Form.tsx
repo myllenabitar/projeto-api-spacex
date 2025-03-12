@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface FormProps {
-  formData: { name: string; idade: number | null };
-  setFormData: React.Dispatch<React.SetStateAction<{ name: string; idade: number | null  }>>;
+  formData: { name: string; age: number | null };
+  setFormData: React.Dispatch<React.SetStateAction<{ name: string; age: number | null  }>>;
 }
 
 const Form: React.FC<FormProps> = ({ formData, setFormData }) => {
@@ -22,8 +22,8 @@ const Form: React.FC<FormProps> = ({ formData, setFormData }) => {
       <input
         id="idade"
         type="number"
-        value={formData.idade ?? ''}
-        onChange={(e) => setFormData({ ...formData, idade: Number(e.target.value) })}
+        value={formData.age ?? ''}
+        onChange={(e) => setFormData({ ...formData, age: Number(e.target.value) })}
         placeholder="Digite sua idade"
         className=""
       />

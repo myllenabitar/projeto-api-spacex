@@ -51,15 +51,17 @@ function SelectFlight() {
     }
   };
 
-  const [formData, setFormData] = useState<{ name: string; idade: number | null }>({ name: '', idade: null });
+  const [formData, setFormData] = useState<{ name: string; age: number | null; ProblemaSaude: boolean }>({ name: '', age: null, ProblemaSaude: false });
 
   const handleReservation = () => {
     const name = formData.name;
     const destination = data?.name || 'Destino Desconhecido';
-  
-    navigate('/ticket', { state: { name, destination } });
+    const age = formData.age;
+    const ProblemaSaude = formData.ProblemaSaude;
+    const insignia = data?.links.patch.small || null;
+
+    navigate('/ticket', { state: { name, age, destination, insignia, ProblemaSaude } });
   };
-  
 
   return (
     <div>
@@ -95,8 +97,8 @@ function SelectFlight() {
         )}
       </div>
       <Form formData={formData} setFormData={setFormData} />
+      <Input />
       <Button onClick={handleReservation} label="Reservar o seu voo" />
-      <Input/>
     </div>
   );
 }
