@@ -5,7 +5,7 @@ const ProblemaSaude: React.FC = () => {
 
   return (
     <div>
-      <label>Possui algum problema de saúde?</label>
+      <label className="radio-group"><strong>Possui algum problema de saúde?</strong></label>
       <div>
         <label>
           <input
@@ -28,7 +28,6 @@ const ProblemaSaude: React.FC = () => {
           Não
         </label>
       </div>
-      <p>Selecionado: {problemaSaude || "Nenhum"}</p>
     </div>
   );
 };

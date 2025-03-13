@@ -7,8 +7,8 @@ interface FormProps {
 
 const Form: React.FC<FormProps> = ({ formData, setFormData }) => {
   return (
-    <div className="">
-      <label htmlFor="name" className="block mb-2">Digite seu nome:</label>
+    <div className="formulario">
+      <label htmlFor="name" className=""><strong>Digite seu nome:</strong></label>
       <input
         id="name"
         type="text"
@@ -18,7 +18,7 @@ const Form: React.FC<FormProps> = ({ formData, setFormData }) => {
         className=""
       />
 
-<label htmlFor="name" className="">Digite sua idade:</label>
+<label htmlFor="name" className="formulario"><strong>Digite sua idade:</strong></label>
       <input
         id="idade"
         type="number"
