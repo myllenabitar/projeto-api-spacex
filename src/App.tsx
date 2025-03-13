@@ -64,33 +64,33 @@ function SelectFlight() {
   };
 
   return (
-    <div>
-      <div className="p-4">
-        <label htmlFor="launches" className="block mb-2">Selecione um voo:</label>
+    <div className="bg-[#f5f5f5] min-h-screen p-8 font-sans antialiased">
+      <div className="p-4 rounded bg-[#cccccc] shadow-lg">
+        <label htmlFor="launches" className="block mb-2 text-[#141414] font-bold">Selecione um voo:</label>
         <select
           id="launches"
           value={selectFlight}
           onChange={handleChange}
-          className="p-2 border rounded"
+          className="p-2 border rounded bg-[#f5f5f5] border-[#a3a3a3] hover:border-[#6375eb] focus:border-[#0a29f5]"
         >
           <option value="">Escolha um voo</option>
           {launches.map((launch) => (
-            <option key={launch.id} value={launch.id}>
+            <option key={launch.id} value={launch.id} className="text-[#525252]">
               {launch.name}
             </option>
           ))}
         </select>
 
         {data && (
-          <div className="mt-4 p-4 border rounded bg-gray-100">
-            <h2 className="text-xl font-bold">{data.name}</h2>
-            <p><strong>Data:</strong> {new Date(data.date_utc).toLocaleDateString()}</p>
-            <p><strong>Detalhes:</strong> {data.details || 'Sem detalhes disponíveis'}</p>
+          <div className="mt-4 p-4 rounded bg-[#84C5DE] shadow-md">
+            <h2 className="text-xl font-bold text-[#141414]">{data.name}</h2>
+            <p className="text-[#525252]"><strong>Data:</strong> {new Date(data.date_utc).toLocaleDateString()}</p>
+            <p className="text-[#525252]"><strong>Detalhes:</strong> {data.details || 'Sem detalhes disponíveis'}</p>
             {data.links.patch.small && (
               <img
                 src={data.links.patch.small}
                 alt="Patch do lançamento"
-                className="mt-2 w-32 h-32"
+                className="mt-2 w-32 h-32 rounded"
               />
             )}
           </div>
