@@ -65,16 +65,16 @@ function SelectFlight() {
 
   return (
     <div className="container">
-      <h1 class="titulo">Bem vindos a Space X</h1>
+      <h1 className="titulo">BEM VINDO A SUA PRÓXIMA VIAGEM</h1>
       <div className="formulario">
-        <label htmlFor="launches" className="titulo"><strong>Selecione um voo:</strong></label>
+        <label htmlFor="launches" className="titulo"><strong>SELECIONE O SEU VÔO:</strong></label>
         <select
           id="launches"
           value={selectFlight}
           onChange={handleChange}
           className="dropdown"
         >
-          <option value="" className="dropdown">Escolha um voo</option>
+          <option className="dropdown">Selecione um voo</option>
           {launches.map((launch) => (
             <option key={launch.id} value={launch.id} className="dropdown">
               {launch.name}
