@@ -21,6 +21,7 @@ function SelectFlight() {
   const [selectFlight, setSelectFlight] = useState<string>('');
   const [data, setData] = useState<Launch | null>(null);
   const [launches, setLaunches] = useState<Launch[]>([]);
+  const [formData, setFormData] = useState<{ name: string; age: number | null; ProblemaSaude: boolean }>({ name: '', age: null, ProblemaSaude: false });
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,30 +52,52 @@ function SelectFlight() {
     }
   };
 
-  const [formData, setFormData] = useState<{ name: string; age: number | null; ProblemaSaude: boolean }>({ name: '', age: null, ProblemaSaude: false });
-
   const handleReservation = () => {
-    const name = formData.name;
-    const destination = data?.name || 'Destino Desconhecido';
-    const age = formData.age;
-    const ProblemaSaude = formData.ProblemaSaude;
-    const insignia = data?.links.patch.small || null;
+    if (validateForm()) {
+      const name = formData.name;
+      const destination = data?.name || 'Destino Desconhecido';
+      const age = formData.age;
+      const ProblemaSaude = formData.ProblemaSaude;
+      const insignia = data?.links.patch.small || null;
 
-    navigate('/ticket', { state: { name, age, destination, insignia, ProblemaSaude } });
+      navigate('/ticket', { state: { name, age, destination, insignia, ProblemaSaude } });
+    }
+  };
+
+  const validateForm = () => {
+    const { name, age } = formData;
+
+    if (!name.trim()) {
+      alert("Por favor, digite seu nome.");
+      return false;
+    }
+
+    if (!selectFlight) {
+      alert("Por favor, selecione um voo.");
+      return false;
+    }
+
+    if (!age || age <= 0) {
+      alert("Por favor, digite uma idade válida.");
+      return false;
+    }
+
+    alert("Reserva efetuada com sucesso! Aguarde pela impressão do seu ticket");
+    return true;
   };
 
   return (
     <div className="container">
       <h1 className="titulo">BEM VINDO A SUA PRÓXIMA VIAGEM</h1>
-      <div className="formulario">
-        <label htmlFor="launches" className="titulo"><strong>SELECIONE O SEU VÔO:</strong></label>
+      <div className="formulario custom-select">
+        <label htmlFor="launches" className="titulo"><strong>SELECIONE O SEU VOO:</strong></label>
         <select
           id="launches"
           value={selectFlight}
           onChange={handleChange}
           className="dropdown"
         >
-          <option className="dropdown">Selecione um voo</option>
+          <option value="" className="dropdown">Selecione o seu voo</option>
           {launches.map((launch) => (
             <option key={launch.id} value={launch.id} className="dropdown">
               {launch.name}
@@ -84,14 +107,14 @@ function SelectFlight() {
 
         {data && (
           <div className="dados-voo">
-            <h2 className="">{data.name}</h2>
-            <p className=""><strong>Data:</strong> {new Date(data.date_utc).toLocaleDateString()}</p>
-            <p className=""><strong>Detalhes:</strong> {data.details || 'Sem detalhes disponíveis'}</p>
+            <h2>{data.name}</h2>
+            <p><strong>Data:</strong> {new Date(data.date_utc).toLocaleDateString()}</p>
+            <p><strong>Detalhes:</strong> {data.details || 'Sem detalhes disponíveis'}</p>
             {data.links.patch.small && (
               <img
                 src={data.links.patch.small}
                 alt="Patch do lançamento"
-                className=""
+                className="patch-image"
               />
             )}
           </div>
@@ -99,7 +122,8 @@ function SelectFlight() {
       </div>
       <Form formData={formData} setFormData={setFormData} />
       <Input />
-      <Button onClick={handleReservation} label="Reservar o seu voo" />
+      <Button onClick={handleReservation} label="RESERVAR VOO  → " />
+      <p className='footer'>SpaceX © 2025</p>
     </div>
   );
 }
@@ -114,5 +138,8 @@ const AppWrapper: React.FC = () => {
     </Router>
   );
 };
+
+export default AppWrapper;
+
 
 export { SelectFlight, AppWrapper };
