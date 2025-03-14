@@ -31,7 +31,7 @@ function SelectFlight() {
         const data = await response.json();
         setLaunches(data);
       } catch (error) {
-        console.error('Erro ao carregar a API:', error);
+        console.error('erro ao carregar a API:', error);
       }
     };
     fetchLaunches();
@@ -47,7 +47,7 @@ function SelectFlight() {
         const data: Launch = await response.json();
         setData(data);
       } catch (error) {
-        console.error('Erro ao buscar detalhes da API:', error);
+        console.error('erro ao buscar detalhes da API:', error);
       }
     }
   };
@@ -68,21 +68,21 @@ function SelectFlight() {
     const { name, age } = formData;
 
     if (!name.trim()) {
-      alert("Por favor, digite seu nome.");
+      alert("digite seu nome.");
       return false;
     }
 
     if (!selectFlight) {
-      alert("Por favor, selecione um voo.");
+      alert("selecione um voo.");
       return false;
     }
 
     if (!age || age <= 1) {
-      alert("Por favor, digite uma idade válida.");
+      alert("digite uma idade válida.");
       return false;
     }
 
-    alert("Reserva efetuada com sucesso! Aguarde pela impressão do seu ticket");
+    alert("Reserva efetuada com sucesso! Aguarde pela impressão do seu ticket!");
     return true;
   };
 
