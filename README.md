@@ -62,7 +62,7 @@ Este projeto foi desenvolvido em **3 dias** com foco em performance e usabilidad
 
 ## Deploy 🌐
 
-O projeto está hospedado na Vercel e pode ser acessado [aqui](URL_DO_DEPLOY).
+O projeto está hospedado na Vercel e pode ser acessado [aqui](https://projeto-api-spacex.vercel.app/).
 
 ---
 
