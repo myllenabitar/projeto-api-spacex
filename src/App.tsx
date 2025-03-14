@@ -59,7 +59,7 @@ function SelectFlight() {
       const age = formData.age;
       const ProblemaSaude = formData.ProblemaSaude;
       const insignia = data?.links.patch.small || null;
-
+      
       navigate('/ticket', { state: { name, age, destination, insignia, ProblemaSaude } });
     }
   };
@@ -77,7 +77,7 @@ function SelectFlight() {
       return false;
     }
 
-    if (!age || age <= 0) {
+    if (!age || age <= 1) {
       alert("Por favor, digite uma idade válida.");
       return false;
     }
@@ -87,26 +87,25 @@ function SelectFlight() {
   };
 
   return (
-    <div className="container">
-      <h1 className="titulo">BEM VINDO A SUA PRÓXIMA VIAGEM</h1>
-      <div className="formulario custom-select">
-        <label htmlFor="launches" className="titulo"><strong>SELECIONE O SEU VOO:</strong></label>
+    <div className="container bg-gradient-to-br from-[#1c2230] via-[#3a4b7d] to-[#6b7ab0] opacity-95 p-10 shadow-lg max-w-xs w-full">
+      <h1 className="titulo text-[23px] text-white mb-7">BEM VINDO A SUA PRÓXIMA VIAGEM</h1>
+      <div>
+        <label htmlFor="launches" className="block mt-2 text-white"><strong>SELECIONE O SEU VOO:</strong></label>
         <select
           id="launches"
           value={selectFlight}
           onChange={handleChange}
-          className="dropdown"
         >
-          <option value="" className="dropdown">Selecione o seu voo</option>
+          <option value="hidden">Selecione o seu voo</option>
           {launches.map((launch) => (
-            <option key={launch.id} value={launch.id} className="dropdown">
+            <option key={launch.id} value={launch.id} className="">
               {launch.name}
             </option>
           ))}
         </select>
 
         {data && (
-          <div className="dados-voo">
+          <div>
             <h2>{data.name}</h2>
             <p><strong>Data:</strong> {new Date(data.date_utc).toLocaleDateString()}</p>
             <p><strong>Detalhes:</strong> {data.details || 'Sem detalhes disponíveis'}</p>
@@ -140,6 +139,4 @@ const AppWrapper: React.FC = () => {
 };
 
 export default AppWrapper;
-
-
 export { SelectFlight, AppWrapper };

@@ -9,7 +9,6 @@ const Button: React.FC<ButtonProps> = ({ onClick, label }) => {
   return (
     <button
       onClick={onClick}
-      className=""
     >
       {label}
     </button>

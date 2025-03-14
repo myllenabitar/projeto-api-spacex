@@ -26,13 +26,11 @@
   justify-content: center;
   height: 25%; 
 }
-
 .logo {
   margin-left: -900px;
   width: 30vh;
   height: 30vh;
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -55,7 +53,6 @@ body {
     background-position: 100% 100%;
   }
 }*/
-
 .container {
   background: linear-gradient(135deg, #1c2230, #3a4b7d, #6b7ab0); 
   opacity: 95%;
@@ -63,26 +60,12 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   max-width: 400px;
   width: 100%;
-  color:var(--totalwhite)
 }
-
-.container p {
-  font-size: 14px;
-  font-weight: 100;
-  color: var(--totalwhite);
-}
-h1 {
-  font-size: 23px;
-  color: var(--totalwhite);
-  margin-bottom: 30px;
-}
-
 label {
   display: block;
   margin-top: 10px;
   color: var(--totalwhite); 
 }
-
 input[type="text"],
 input[type="number"],
 select {
@@ -95,7 +78,6 @@ select {
   background-color: var(--foreground); 
   color: var(--background);
 }
-
 button {
   width: 100%;
   padding: 10px;
@@ -109,15 +91,8 @@ button {
   font-size: 15px;
   font-weight: bold;
 }
-.dados-voo {
-  color: var(--totalwhite);
-}
-
 button:hover {
   background: #2a6cb2; 
-}
-.ticket {
-  color: var(--totalwhite);
 }
 .footer {
   margin-left: 150px;
