@@ -43,16 +43,16 @@ body {
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  /*animation: moveBackground 30s linear infinite;*/
+  animation: moveBackground 30s linear infinite;
 }
-/*@keyframes moveBackground {
+@keyframes moveBackground {
   0% {
     background-position: 0 0;
   }
   100% {
     background-position: 100% 100%;
   }
-}*/
+}
 .container {
   background: linear-gradient(135deg, #1c2230, #3a4b7d, #6b7ab0); 
   opacity: 95%;
