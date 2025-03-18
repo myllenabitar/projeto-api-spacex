@@ -102,13 +102,6 @@ button:hover {
   .logo-container {
     display: none;
   }
-
-  .logo {
-    margin-left: 0; 
-    width: 20vh; 
-    height: 20vh; 
-  }
-
   .container {
     padding: 20px;
     max-width: 100%;
