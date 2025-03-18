@@ -104,9 +104,8 @@ button:hover {
   }
   .container {
     padding: 20px;
-    max-width: 100%;
+    max-width: 80%;
   }
-
   .footer {
     margin-left: 0;
     text-align: center;
