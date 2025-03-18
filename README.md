@@ -11,7 +11,6 @@ Este projeto foi desenvolvido em **3 dias** com foco em performance e usabilidad
 
 - **React.js:** Biblioteca JavaScript para construção de interfaces e React Routes
 - **TypeScript:** Tipagem estática e tipada para maior segurança e escalabilidade.
-- **Axios:** Cliente HTTP para consumir a API da SpaceX.
 - **Tailwind:** Para estilização.
 - **CSS:** Para estilização global e de componentes, keyframes e animações.
 - **Vercel:** Hospedagem da aplicação com integração contínua.
@@ -62,7 +61,7 @@ Este projeto foi desenvolvido em **3 dias** com foco em performance e usabilidad
 
 ## Deploy 🌐
 
-O projeto está hospedado na Vercel e pode ser acessado [aqui](URL_DO_DEPLOY).
+O projeto está hospedado na Vercel e pode ser acessado [aqui](https://projeto-api-spacex.vercel.app/).
 
 ---
 
