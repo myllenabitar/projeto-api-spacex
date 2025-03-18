@@ -98,3 +98,24 @@ button:hover {
   margin-left: 150px;
   margin-bottom: 1px;
 }
+@media (max-width: 768px) {
+  .logo-container {
+    height: 20%; 
+  }
+
+  .logo {
+    margin-left: 0; 
+    width: 20vh; 
+    height: 20vh; 
+  }
+
+  .container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .footer {
+    margin-left: 0;
+    text-align: center;
+  }
+}
