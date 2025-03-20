@@ -3,7 +3,7 @@
 ## Sobre o Projeto
 Este projeto utiliza a API pública da SpaceX para exibir informações atualizadas sobre os lançamentos espaciais da empresa. A aplicação permite visualizar dados detalhados dos lançamentos, como nome da missão, data, foguete utilizado e muito mais, proporcionando uma experiência interativa e informativa para os usuários.
 
-Este projeto foi desenvolvido em **3 dias** com foco em performance e usabilidade, utilizando tecnologias modernas e boas práticas de desenvolvimento front-end.
+Este projeto foi desenvolvido em **3 dias** com foco em performance e usabilidade, utilizando tecnologias modernas e boas práticas de desenvolvimento front-end. O projeto também já está responsivo para interfaces menores como mobile. 
 
 ---
 
